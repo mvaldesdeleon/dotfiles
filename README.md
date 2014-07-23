@@ -1,8 +1,10 @@
 # MVL’s dotfiles
 
-Forked from [Mathias Bynens's](https://github.com/mathiasbynens/dotfiles)
+Forked from [Mathias Bynens'](https://github.com/mathiasbynens/dotfiles)
 
 ![Screenshot of my shell prompt](http://i.imgur.com/0CcloqY.png)
+
+Based around a Monokai theme, includes the solutions I've found thus far to my most frequent terminal-related tasks.
 
 ## Installation
 
@@ -46,8 +48,8 @@ Here’s an example `~/.path` file that adds some directories to the `$PATH`:
 # Verbose but straight-forward
 path_directories=(
   '~/bin'
-	'~/tools'
-	'~/utils'
+  '~/tools'
+  '~/utils'
 )
 
 export PATH=$(printf "%s:" "${path_directories[@]}")$PATH
