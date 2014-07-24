@@ -122,5 +122,5 @@ PS1+="\$(usernamehost)" # Username and host, if relevant
 PS1+="\[$BOLD$RED\]\$ \[$RESET\]" # The final prompt, and reset coloring
 export PS1
 
-PS2="\[${RED}\]→ \[${RESET}\]";
+PS2="\[${RED}\]↪ \[${RESET}\]";
 export PS2;
