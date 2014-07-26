@@ -8,7 +8,7 @@
 	cp = cherry-pick
 	# Pretty things
 	ll = log --oneline --graph --color --all --decorate
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	# `git tar $number $file` exports every file `touched` during the last `$number` commits into a tar file named `$file`
 	tar = !sh -c 'git diff-tree -r --no-commit-id --name-only --diff-filter=ACMRT HEAD~$1 HEAD | xargs tar -rf $2' -
 	# `git export $folder` exports the current commit into `$folder`, sans all git-related files.
