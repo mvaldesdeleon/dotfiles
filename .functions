@@ -1,5 +1,5 @@
 # Create a new directory and enter it
-function md() {
+function mkd() {
   mkdir -p "$@" && cd "$@"
 }
 
@@ -28,23 +28,23 @@ function extract () {
     fi
     mkdir -p "$foldername" && cd "$foldername"
     case $1 in
-      *.tar.bz2)  tar xjf "$fullpath"     ;;
-      *.tar.gz)   tar xzf "$fullpath"     ;;
-      *.tar.xz)   tar Jxvf "$fullpath"    ;;
-      *.tar.Z)    tar xzf "$fullpath"     ;;
-      *.bz2)      bunzip2 "$fullpath"     ;;
-      *.rar)      unrar e "$fullpath"     ;;
-      *.gz)       gunzip "$fullpath"      ;;
-      *.tar)      tar xf "$fullpath"      ;;
-      *.taz)      tar xzf "$fullpath"     ;;
-      *.tb2)      tar xjf "$fullpath"     ;;
-      *.tbz)      tar xjf "$fullpath"     ;;
-      *.tbz2)     tar xjf "$fullpath"     ;;
-      *.tgz)      tar xzf "$fullpath"     ;;
-      *.txz)      tar Jxvf "$fullpath"    ;;
-      *.zip)      unzip "$fullpath"       ;;
-      *.Z)        uncompress "$fullpath"  ;;
-      *.7z)       7z x "$fullpath"        ;;
+      *.tar.bz2)  tar xjf "$fullpath"     && cd .. ;;
+      *.tar.gz)   tar xzf "$fullpath"     && cd .. ;;
+      *.tar.xz)   tar Jxvf "$fullpath"    && cd .. ;;
+      *.tar.Z)    tar xzf "$fullpath"     && cd .. ;;
+      *.bz2)      bunzip2 "$fullpath"     && cd .. ;;
+      *.rar)      unrar e "$fullpath"     && cd .. ;;
+      *.gz)       gunzip "$fullpath"      && cd .. ;;
+      *.tar)      tar xf "$fullpath"      && cd .. ;;
+      *.taz)      tar xzf "$fullpath"     && cd .. ;;
+      *.tb2)      tar xjf "$fullpath"     && cd .. ;;
+      *.tbz)      tar xjf "$fullpath"     && cd .. ;;
+      *.tbz2)     tar xjf "$fullpath"     && cd .. ;;
+      *.tgz)      tar xzf "$fullpath"     && cd .. ;;
+      *.txz)      tar Jxvf "$fullpath"    && cd .. ;;
+      *.zip)      unzip "$fullpath"       && cd .. ;;
+      *.Z)        uncompress "$fullpath"  && cd .. ;;
+      *.7z)       7z x "$fullpath"        && cd .. ;;
       *)          echo "'$1' cannot be extracted via extract()" && cd .. && ! $didfolderexist && rm -r "$foldername" ;;
     esac
   else
@@ -169,6 +169,11 @@ function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
+# Renames all files and folders in the current folder to lowercase
+function tolower() {
+  for f in *; do mv "$f" "`echo $f | tr "[:upper:]" "[:lower:]"`"; done
+}
+
 # Print a color test
 function color-test () {
   echo -e "\033[0mNONE"
@@ -180,4 +185,9 @@ function color-test () {
   echo -e "\033[0;35mPURPLE\t\033[1;35mPURPLE_BOLD"
   echo -e "\033[0;36mCYAN\t\033[1;36mCYAN_BOLD"
   echo -e "\033[0;37mWHITE\t\033[1;37mWHITE_BOLD"
+}
+
+# Global pip
+function gpip () {
+  PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
