@@ -63,7 +63,8 @@ function server() {
 
 # Copy w/ progress
 function cpp () {
-  rsync -WavP --human-readable --progress $1 $2
+  # Requires rsync 3+. If running on a default OSX installation, you will need to brew your rsync to get the correct version.
+  rsync -WavzsP --human-readable $1 $2
 }
 
 # Syntax-highlight JSON strings or files

@@ -127,3 +127,5 @@ alias stfu="osascript -e 'set volume output muted true' 2> /dev/null"
 alias pumpitup="osascript -e 'set volume 10'  2> /dev/null"
 
 alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app'
+
+alias diff="git diff"

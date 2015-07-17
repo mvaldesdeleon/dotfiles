@@ -53,6 +53,8 @@ path_directories=(
 )
 
 export PATH=$(printf "%s:" "${path_directories[@]}")$PATH
+
+# Additional paths (e.g., Z_PATH ) are also defined here
 ```
 
 ### Add custom commands without creating a new fork
@@ -64,7 +66,7 @@ My `~/.extra` looks something like this:
 ```bash
 # Default username and hostname for prompt customization
 export DEFAULT_USERNAME='mvaldes'
-export DEFAULT_HOSTNAME='Martins-MacBook-Air'
+export DEFAULT_HOSTNAME='Martins-MacBook-Pro'
 
 # Personal data for Git setup
 export FULL_NAME="Martín Valdés de León"
@@ -81,14 +83,28 @@ git config --global user.name "$GIT_AUTHOR_NAME"
 # GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$WORK_EMAIL"
 
-# Easier navigation: Work-related folders
+# Easier navigation: Custom/Work-related directories
+# [aliases for quick cd'ing into specific directories, not included here]
 
 # Git local user.email switcheroo
 git config --global alias.work '! git config user.email "$WORK_EMAIL"'
 git config --global alias.home '! git config user.email "$HOME_EMAIL"'
+
+# Init NVM
+. ~/.nvm/nvm.sh
 ```
 
 You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mvaldesdeleon/dotfiles/fork) instead, though.
+
+### Z.sh
+
+You will notice that [.bashrc:20](.bashrc) also initializes [Z.sh](https://github.com/rupa/z). If you do not want to use this script, just remove or comment-out this line.
+
+### Bash Completion
+
+I've included my bash completion files as part of this repo. Should you want to use them, just copy them to somewhere appropriate and update the BASH_COMPLETION_DIR variable in [.bashrc:8](.bashrc).
+
+Keep in mind that these are simply the files I'm currently using, and that they might very well be out-of-date. I am not the creator/maintainer of these and I'm just providing them for completion's sake.
 
 ## TODO's
 
