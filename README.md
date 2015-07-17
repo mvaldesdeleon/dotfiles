@@ -98,11 +98,11 @@ You could also use `~/.extra` to override settings, functions and aliases from m
 
 ### Z.sh
 
-You will notice that [.bashrc:10](.bashrc) also initializes [Z.sh](https://github.com/rupa/z). If you do not want to use this script, just remove or comment-out this line.
+You will notice that [.bashrc:10](.bashrc#L10) also initializes [Z.sh](https://github.com/rupa/z). If you do not want to use this script, just remove or comment-out this line.
 
 ### Bash Completion
 
-I've included my bash completion files as part of this repo. Should you want to use them, just copy them to somewhere appropriate and update the BASH_COMPLETION_DIR variable in [.bashrc:21](.bashrc).
+I've included my bash completion files as part of this repo. Should you want to use them, just copy them to somewhere appropriate and update the BASH_COMPLETION_DIR variable in [.bashrc:21](.bashrc#L21).
 
 Keep in mind that these are simply the files I'm currently using, and that they might very well be out-of-date. I am not the creator/maintainer of these and I'm just providing them for completion's sake.
 
