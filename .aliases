@@ -102,9 +102,6 @@ alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 # Also, clear Apple’s System Logs to improve shell startup speed
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
-# JavaScript shells
-alias js="node"
-
 # Single-key shortcuts
 alias c="pcat"
 alias g="git"
@@ -119,6 +116,8 @@ alias gl="git l"
 alias gst="git s" # gs is most likely ghostscript :(
 alias gdf="git df"
 alias gdc="git df --cached"
+alias gwdf="git wdf"
+alias gwdc="git wdf --cached"
 # TODO: Try to get this as a working git alias.
 alias gitwho='echo "${CYAN}`git config --get user.name`${RESET} ${BOLD}${PURPLE}<`git config --get user.email`>${RESET}"'
 
@@ -126,6 +125,5 @@ alias gitwho='echo "${CYAN}`git config --get user.name`${RESET} ${BOLD}${PURPLE}
 alias stfu="osascript -e 'set volume output muted true' 2> /dev/null"
 alias pumpitup="osascript -e 'set volume 10'  2> /dev/null"
 
-alias ios='open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app'
-
 alias diff="git diff"
+alias wdiff="git diff --color-words"

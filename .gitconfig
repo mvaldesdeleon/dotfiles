@@ -1,12 +1,13 @@
 [alias]
 	# Simple aliases
 	st = status
-  df = diff
-  ci = commit
-  co = checkout
-  br = branch
-  cp = cherry-pick
-  # Pretty things
+	df = diff
+	wdf = diff --color-words
+	ci = commit
+	co = checkout
+	br = branch
+	cp = cherry-pick
+	# Pretty things
 	ll = log --oneline --graph --color --all --decorate
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	# `git tar $number $file` exports every file `touched` during the last `$number` commits into a tar file named `$file`
@@ -41,6 +42,11 @@
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 	# List contributors with number of commits
 	contribs = shortlog --summary --numbered
+	# Dangling Commits
+	dangling = "!d() { git show --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --no-patch $( git fsck --no-reflog | awk '/dangling commit/ {print $3}'); }; d"
+	# User switching
+	work = ! git config user.email \"$WORK_EMAIL\"
+	play = ! git config user.email \"$HOME_EMAIL\"
 
 [core]
 	excludesfile = ~/.gitignore
