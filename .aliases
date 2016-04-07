@@ -47,6 +47,10 @@ alias subl="open -a 'Sublime Text 2'"
 # Default editor
 alias edit="subl"
 
+# Use neovim
+alias vim="nvim"
+alias vi="nvim"
+
 # Edit some files quickly
 alias edit-hosts="sudo edit /etc/hosts" # Edit hosts file
 alias edit-apache="sudo edit /etc/apache2/users/$USER.conf" # Edit user Apache configuration
@@ -102,11 +106,21 @@ alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 # Also, clear Apple’s System Logs to improve shell startup speed
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
+# Kill all tmux sessions
+alias ktmux="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
+
+# Byobu done right
+alias b="byobu"
+alias bn="byobu new"
+
 # Single-key shortcuts
 alias c="pcat"
 alias g="git"
 alias l="ll"
-alias e="edit"
+alias t="tree"
+alias v="vim"
+
+alias vt="vim -t"
 
 # Git shortcuts
 alias gc="git commit"
@@ -127,3 +141,8 @@ alias pumpitup="osascript -e 'set volume 10'  2> /dev/null"
 
 alias diff="git diff"
 alias wdiff="git diff --color-words"
+
+alias cls="clear"
+
+# Insecure Chrome
+alias evil-chrome='open -a "Google Chrome Canary" --args --disable-web-security --user-data-dir'

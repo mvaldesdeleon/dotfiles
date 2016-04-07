@@ -1,13 +1,9 @@
-# Load ~/.path, ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
-# ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{path,extra,bash_prompt,exports,aliases,functions}; do
+# ~/.sharedrc can be used for start-up commands you want to run on all shells
+# ~/.extras can be used for settings you don’t want to commit
+for file in ~/.{path,exports,aliases,functions,sharedrc,extras,bash_prompts}; do
   [ -r "$file" ] && . "$file"
 done
 unset file
-
-# Init z
-# NOTE: Z_PATH will not be tilde-expanded. Take care of that yourself (i.e., eval Z_PATH="~/bin"; export Z_PATH;)
-. "${Z_PATH}/z.sh"
 
 # Keep the history
 shopt -s histappend

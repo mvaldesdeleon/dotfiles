@@ -47,26 +47,36 @@ Here’s an example `~/.path` file that adds some directories to the `$PATH`:
 ```bash
 # Verbose but straight-forward
 path_directories=(
-  '~/bin'
-  '~/tools'
-  '~/utils'
+    '/Users/mvaldes/Miscellaneous/bin'
+    '/Users/mvaldes/Library/Android/sdk/platform-tools'
+    '/Users/mvaldes/Library/Android/sdk/tools'
+    '/opt/local/bin'
+    '/opt/local/sbin'
+    '/usr/local/bin'
+    '/usr/texbin'
+    '/usr/bin'
+    '/bin'
+    '/usr/sbin'
+    '/sbin'
 )
 
-export PATH=$(printf "%s:" "${path_directories[@]}")$PATH
+export PATH=$(printf "%s:" "${path_directories[@]}")
+unset path_directories
 
 # Additional paths (e.g., Z_PATH ) are also defined here
 ```
 
 ### Add custom commands without creating a new fork
 
-If `~/.extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
+If `~/.extras` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
 
-My `~/.extra` looks something like this:
+My `~/.extras` looks something like this:
 
 ```bash
 # Default username and hostname for prompt customization
 export DEFAULT_USERNAME='mvaldes'
 export DEFAULT_HOSTNAME='Martins-MacBook-Pro'
+export DEFAULT_USER="$DEFAULT_USERNAME"
 
 # Personal data for Git setup
 export FULL_NAME="Martín Valdés de León"
@@ -89,16 +99,13 @@ git config --global user.email "$WORK_EMAIL"
 # Git local user.email switcheroo
 git config --global alias.work '! git config user.email "$WORK_EMAIL"'
 git config --global alias.home '! git config user.email "$HOME_EMAIL"'
-
-# Init NVM
-. ~/.nvm/nvm.sh
 ```
 
-You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mvaldesdeleon/dotfiles/fork) instead, though.
+You could also use `~/.extras' to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mvaldesdeleon/dotfiles/fork) instead, though.
 
 ### Z.sh
 
-You will notice that [.bashrc:10](.bashrc#L10) also initializes [Z.sh](https://github.com/rupa/z). If you do not want to use this script, just remove or comment-out this line.
+You will notice that [.sharedrc:3](.sharedrc#L3) also initializes [Z.sh](https://github.com/rupa/z). If you do not want to use this script, just remove or comment-out this line.
 
 ### Bash Completion
 
@@ -106,10 +113,11 @@ I've included my bash completion files as part of this repo. Should you want to 
 
 Keep in mind that these are simply the files I'm currently using, and that they might very well be out-of-date. I am not the creator/maintainer of these and I'm just providing them for completion's sake.
 
+**Update 04-2016**: I switched to zsh, so I will probably not be updating these.
+
 ## TODO's
 
-* Take a better screenshot (?)
-* Implement .editorconfig and Preferences.sublime-settings
+* Update screenshots
 * Implement "New machine" files (.osx, Homebrew, Caskfile)
 
 ## Feedback
