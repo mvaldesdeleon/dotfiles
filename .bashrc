@@ -1,6 +1,6 @@
 # ~/.sharedrc can be used for start-up commands you want to run on all shells
 # ~/.extras can be used for settings you don’t want to commit
-for file in ~/.{path,exports,aliases,functions,sharedrc,extras,bash_prompts}; do
+for file in ~/.{path,exports,aliases,functions,sharedrc,extras,bash_prompt}; do
   [ -r "$file" ] && . "$file"
 done
 unset file
