@@ -7,7 +7,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'sjl/gundo.vim'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'Konfekt/FastFold'
 
@@ -40,6 +39,7 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'gregsexton/gitv'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
