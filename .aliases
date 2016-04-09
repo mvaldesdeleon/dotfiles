@@ -119,8 +119,10 @@ alias g="git"
 alias l="ll"
 alias t="tree"
 alias v="vim"
+alias d="docker"
 
 alias vt="vim -t"
+alias dm="docker-machine"
 
 # Git shortcuts
 alias gc="git commit"
