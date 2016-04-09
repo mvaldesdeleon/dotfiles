@@ -114,6 +114,12 @@ autocmd BufReadPost *
      \ endif
 
 let g:ctrlp_extensions = ['tag']
+let g:ctrlp_map = '<Leader>p'
+let g:ctrlp_custom_ignore = {
+            \ 'dir': '\v[\/](node_modules|bower_components|dist)$'
+            \ }
+
+let g:ctrlsf_ignore_dir = ['node_modules', 'bower_components', 'dist']
 
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline#extensions#tabline#left_sep = ' '
@@ -140,7 +146,7 @@ function! NumberToggle()
 endfunc
 
 nnoremap <Leader>f :CtrlSF<space>
-nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader><Leader>f :CtrlSFToggle<CR>
 nnoremap <Leader>w :Bdelete<CR>
 nnoremap <Leader>s :w<CR>
 nnoremap <Leader><C-s> :wa<CR>
