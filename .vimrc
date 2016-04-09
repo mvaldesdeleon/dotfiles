@@ -60,6 +60,8 @@ Plug 'davidhalter/jedi-vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 
+Plug 'moll/vim-bbye'
+
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -137,18 +139,19 @@ function! NumberToggle()
   endif
 endfunc
 
+nnoremap <Leader>f :CtrlSF<space>
+nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>w :Bdelete<CR>
+nnoremap <Leader>s :w<CR>
+nnoremap <Leader><C-s> :wa<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader><C-q> :qa<CR>
+
 " Toggle between normal and relative numbering.
-nmap <silent> <Leader>r :call NumberToggle()<CR>
+nnoremap <silent> <Leader>r :call NumberToggle()<CR>
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#auto_complete_delay = 100
-
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-
-nmap <Leader>t :NERDTreeToggle<CR>
-
-nmap <Leader>y :TagbarToggle<CR>
+nnoremap <Leader>t :NERDTreeToggle<CR>
+nnoremap <Leader>y :TagbarToggle<CR>
 
 "smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
@@ -193,6 +196,12 @@ endfunction
 noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
 noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
 noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#auto_complete_delay = 100
+
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
