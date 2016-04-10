@@ -152,6 +152,7 @@ nnoremap <Leader>s :w<CR>
 nnoremap <Leader><C-s> :wa<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader><C-q> :qa<CR>
+map <Leader>a <Plug>(EasyAlign)
 
 " Toggle between normal and relative numbering.
 nnoremap <silent> <Leader>r :call NumberToggle()<CR>
